@@ -4,20 +4,20 @@
 After this lesson, students will be able to:
 
 * Explain the difference between server-side and client-side form validation
-* Explain how Angular's ngMessages library provides support for _declarative_ form validation.
-* Create an HTML Form that uses Angular's ngMessages for client-side form validation.
+* Explain how Angular's `ngMessages` library provides support for _declarative_ form validation.
+* Create an HTML Form that uses Angular's `ngMessages` for client-side form validation.
 
 ## Introduction
 
-This lesson covers how to do forms and form validation in _AngularJS_. When we did server-side rendering, we had to validate the user input on the server side and return an error message when the user made a mistake.
+This lesson covers how to do forms and form validation in _AngularJS_. When we did _server-side_ rendering, we had to validate the user input on the server side and return an error message when the user made a mistake.
 
-Now that we have client-side rendering and a full-featured client-side JavaScript framework in _AngularJS_, we can do a large portion of the form validation in the client code running in the browser before we even send anything to the server. If the form is in an _invalid_ state, we may even disable the submit button until the error is corrected by the user.
+Now that we have _client-side_ rendering and a full-featured client-side JavaScript framework in _AngularJS_, we can do a large portion of the form validation in the client code running in the browser before we even send anything to the server. If the form is in an _invalid_ state, we may even disable the submit button until the error is corrected by the user.
 
 Note that we cannot do _all_ of the form validation in the client code. Validating that an email address is not already taken or that a duplicate item does not already exist are errors that usually need to be detected server-side. But _many_ user errors can be checked and caught in the client-side JavaScript code, saving a trip to the server and making the UI experience much snappier.
 
 ## Error Reporting
 
-There are many ways to _report_ a form input error to the user. Most common is putting an error message directly above, below, or to the side of the form input control containing the erroneous user input. _AngularJS_ provides a means to easily define the error messages that may be displayed for various kinds of errors (such as input being too short, too long, or not matching a specified pattern). In addition, these error messages can be styled using CSS or a CSS library such as _Twitter Bootstrap_ which has lots of support for styling forms.
+There are many ways to _report_ a form input error to the user. Most common is putting an error message directly above, below, or beside the form input control containing the erroneous user input. _AngularJS_ provides a means to easily define the error messages that may be displayed for various kinds of errors (such as input being too short, too long, or not matching a specified pattern). In addition, these error messages can be styled using CSS or a CSS library such as _Twitter Bootstrap_ which has lots of support for styling forms.
 
 Note that _AngularJS_ provides support for conditionally showing or hiding error messages in the [ngMessages](_https://docs.angularjs.org/api/ngMessages/directive/ngMessages) module. This module must be included in your project and loaded by your application's module configuration:
 
@@ -177,4 +177,5 @@ Below is some Sassy CSS (SCSS) that will style the form validation error message
 * [AngularJS Form Validation - Solution Codepen](http://codepen.io/drmikeh/pen/OVxyBw?editors=1110)
 * [Angular ngMessages](https://docs.angularjs.org/api/ngMessages)
 * [Angular ngAnimate](https://docs.angularjs.org/api/ngAnimate)
+* [Twitter Bootstrap Forms](http://getbootstrap.com/css/#forms)
 
