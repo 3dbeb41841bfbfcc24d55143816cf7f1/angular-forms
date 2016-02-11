@@ -1,0 +1,57 @@
+<html ng-app="myApp">
+<head>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+
+  <body>
+    <h1>Angular Validation with ngMessages - Solution Codepen</h1>
+    <hr>
+    <form ng-controller="formCtrl as ctrl"
+          name="myForm"
+          class="form-horizontal container"
+          novalidate
+          ng-submit="ctrl.submitForm();">
+
+      <div class="form-group">
+        <label for="user" class="col-xs-3 control-label text-right">Username</label>
+        <div class="col-xs-9">
+          <input type="text"
+                 class="form-control"
+                 name="user"
+                 ng-model="ctrl.formData.userName" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="col-xs-3 control-label text-right">Email</label>
+        <div class="col-xs-9">
+          <input type="email"
+                 class="form-control"
+                 name="email"
+                 ng-model="ctrl.formData.email" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-3 control-label text-right">Zip Code</label>
+        <div class="col-xs-9">
+          <input type="text"
+                 class="form-control"
+                 name="zipcode"
+                 ng-model="ctrl.formData.zipcode" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-xs-offset-6 col-xs-3">
+          <button type="submit"
+                  class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

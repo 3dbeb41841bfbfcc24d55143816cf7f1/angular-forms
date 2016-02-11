@@ -1,0 +1,87 @@
+<html ng-app="myApp">
+<head>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+</head>
+
+  <body>
+    <h1>Angular Validation with ngMessages - Solution Codepen</h1>
+    <hr>
+    <form ng-controller="formCtrl as ctrl"
+          name="myForm"
+          class="form-horizontal container"
+          novalidate
+          ng-submit="ctrl.submitForm();">
+
+      <div class="form-group">
+        <label for="user" class="col-xs-3 control-label text-right">Username</label>
+        <div class="col-xs-9">
+          <input type="text"
+                 class="form-control"
+                 name="user"
+                 ng-model="ctrl.formData.userName"
+                 ng-minlength="3"
+                 ng-maxlength="10"
+                 required />
+           <div class="error-messages" ng-messages="myForm.user.$error">
+            <div ng-message="required">Username is required</div>
+            <div ng-message="minlength">Username is too short</div>
+            <div ng-message="maxlength">Username is too long</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email" class="col-xs-3 control-label text-right">Email</label>
+        <div class="col-xs-9">
+          <input type="email"
+                 class="form-control"
+                 name="email"
+                 ng-model="ctrl.formData.email"
+                 required />
+          <div class="error-messages" ng-messages="myForm.email.$error">
+            <div ng-message="required">Email is required</div>
+            <div ng-message="email">Invalid email address.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-xs-3 control-label text-right">Zip Code</label>
+        <div class="col-xs-9">
+          <input type="text"
+                 class="form-control"
+                 name="zipcode"
+                 ng-model="ctrl.formData.zipcode"
+                 required
+                 ng-pattern="/^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/" />
+          <div class="error-messages" ng-messages="myForm.zipcode.$error">
+            <div ng-message="required">Zip Code is required</div>
+            <div ng-message="pattern">Please type a valid U.S. or Canadian zip code.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-xs-offset-6 col-xs-3">
+          <button type="submit"
+                  class="btn btn-primary"
+                  ng-disabled="myForm.$invalid">Submit</button>
+        </div>
+      </div>
+
+      <hr/>
+
+      <hh>Some debugging output:</h4>
+      <pre>myForm.$valid         = {{ myForm.$valid         | json }}</pre>
+      <pre>myForm.user.$error    = {{ myForm.user.$error    | json }}</pre>
+      <pre>myForm.email.$error   = {{ myForm.email.$error   | json }}</pre>
+      <pre>myForm.zipcode.$error = {{ myForm.zipcode.$error | json }}</pre>
+    </form>
+  </body>
+</html>
